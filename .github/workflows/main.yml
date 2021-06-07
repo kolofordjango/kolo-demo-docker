@@ -16,7 +16,7 @@ jobs:
       if: runner.os == 'Linux'
     - name: Python Test Mac
       run: docker-compose --file docker-compose-mac-test.yml up
-      if: runner.os == 'Mac'
+      if: runner.os == 'macOS'
     - name: Python Test Windows
       run: docker-compose --file docker-compose-windows-test.yml up
       if: runner.os == 'Windows'
