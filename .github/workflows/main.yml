@@ -28,6 +28,8 @@ jobs:
       run: docker-compose --file docker-compose-mac-test.yml up --exit-code-from test
       if: runner.os == 'macOS'
     - name: Python Test Windows
+      env:
+        COMPOSE_CONVERT_WINDOWS_PATHS: true
       run: docker-compose --file docker-compose-windows-test.yml up --exit-code-from test
       if: runner.os == 'Windows'
     - uses: actions/setup-node@v2
