@@ -3,7 +3,7 @@ services:
     build: .
     volumes:
       - .:/code
-      - "~\Application Data\Local Settings\kolo\kolo:/root/.local/share/kolo:rw"
+      - "~\AppData\\Local\\kolo\\kolo:/root/.local/share/kolo:rw"
     ports:
       - "8000:8000"
     command: python manage.py test

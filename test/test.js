@@ -3,8 +3,12 @@ const sqlite3 = require("sqlite3");
 const envPaths = require("env-paths");
 const path = require("path")
 const { open } = require("sqlite");
+const os = require("os")
 
-const dataDirectory = envPaths("kolo", { suffix: "" }).data;
+let dataDirectory = envPaths("kolo", { suffix: "" }).data;
+if (os.platform().startsWith("win")) {
+  dataDirectory = path.join(dataDirectory, "..", path.sep, "kolo")
+}
 const dbFolderPath = path.join(dataDirectory, "storage");
 const koloProjectName = process.env.KOLO_PROJECT_NAME
 
