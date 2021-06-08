@@ -4,25 +4,12 @@ on: [push]
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Python Test Linux
       run: docker-compose --file docker-compose-linux-test.yml up
-      if: runner.os == 'Linux'
-    - name: Python Test Mac
-      run: docker-compose --file docker-compose-mac-test.yml up
-      if: runner.os == 'macOS'
-    - name: Python Test Windows
-      run: docker-compose --file docker-compose-windows-test.yml up
-      if: runner.os == 'Windows'
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '15'
+    - uses: actions/setup-node@v2
     - run: npm ci
+    - run: ls -lh ~/.local/share/kolo && ls -lh ~/.local/share/kolo/storage
     - run: npm test
