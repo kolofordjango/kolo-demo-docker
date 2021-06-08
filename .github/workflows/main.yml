@@ -21,6 +21,8 @@ jobs:
     - run: |
         docker-machine create --driver virtualbox default
         docker-machine restart
+        eval "$(docker-machine env default)"
+        docker-machine restart
       if: runner.os == 'macOS'
     - name: Python Test Mac
       run: docker-compose --file docker-compose-mac-test.yml up --exit-code-from test
