@@ -1,2 +1,2 @@
-# kolo-docker-demo
+# kolo-demo-docker
 
