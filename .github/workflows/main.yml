@@ -14,6 +14,10 @@ jobs:
     - name: Python Test Linux
       run: docker-compose --file docker-compose-linux-test.yml up --exit-code-from test
       if: runner.os == 'Linux'
+    - uses: Homebrew/actions/setup-homebrew@c4aafe
+      if: runner.os == 'macOS'
+    - run: brew install docker docker-compose
+      if: runner.os == 'macOS'
     - name: Python Test Mac
       run: docker-compose --file docker-compose-mac-test.yml up --exit-code-from test
       if: runner.os == 'macOS'
