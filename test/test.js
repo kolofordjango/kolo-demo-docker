@@ -21,7 +21,6 @@ const fullDatabasePath = path.join(dbFolderPath, `${databaseName}.sqlite3`);
 
 describe('Kolo sqlite DB', function() {
   it('should have data', async function() {
-    console.log(fullDatabasePath)
     const db = await open({
       filename: fullDatabasePath,
       driver: sqlite3.Database,

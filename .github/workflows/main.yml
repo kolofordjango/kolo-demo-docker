@@ -11,6 +11,4 @@ jobs:
       run: docker-compose --file docker-compose-linux-test.yml up --exit-code-from test
     - uses: actions/setup-node@v2
     - run: npm ci
-    - run: ls -lh ~/.local/share/kolo
-    - run: ls -lh ~/.local/share/kolo/storage
     - run: npm test
