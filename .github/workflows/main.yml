@@ -16,7 +16,11 @@ jobs:
       if: runner.os == 'Linux'
     - uses: Homebrew/actions/setup-homebrew@c4aafe8c4620bf08883dd4679c374f11e73329d3
       if: runner.os == 'macOS'
-    - run: brew install docker docker-compose
+    - run: brew install docker docker-compose docker-machine virtualbox
+      if: runner.os == 'macOS'
+    - run: |
+        docker-machine create --driver virtualbox default
+        docker-machine restart
       if: runner.os == 'macOS'
     - name: Python Test Mac
       run: docker-compose --file docker-compose-mac-test.yml up --exit-code-from test
