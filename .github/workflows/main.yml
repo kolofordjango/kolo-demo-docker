@@ -4,11 +4,22 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - name: Python Test Linux
       run: docker-compose --file docker-compose-linux-test.yml up --exit-code-from test
+      if: runner.os == 'Linux'
+    - name: Python Test Mac
+      run: docker-compose --file docker-compose-mac-test.yml up --exit-code-from test
+      if: runner.os == 'macOS'
+    - name: Python Test Windows
+      run: docker-compose --file docker-compose-windows-test.yml up --exit-code-from test
+      if: runner.os == 'Windows'
     - uses: actions/setup-node@v2
     - run: npm ci
     - run: npm test
