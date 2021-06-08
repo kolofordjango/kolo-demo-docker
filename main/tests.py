@@ -39,6 +39,7 @@ class KoloTestCase(TestCase):
         self.cursor = self.conn.cursor()
 
     def test_kolo_saves_request_data(self):
+        print(self.db_path)
         try:
             result = self.cursor.execute("SELECT * FROM invocations LIMIT 1")
         except sqlite3.OperationalError:
