@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Python Test Linux
-      run: docker-compose --file docker-compose-linux-test.yml up
+      run: docker-compose --file docker-compose-linux-test.yml --exit-code-from test up
     - uses: actions/setup-node@v2
     - run: npm ci
     - run: ls -lh ~/.local/share/kolo
