@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/code
+      - "~/.local/share/kolo:/root/.local/share/kolo:rw"
+    ports:
+      - "8000:8000"

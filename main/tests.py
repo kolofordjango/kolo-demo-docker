@@ -34,7 +34,8 @@ class KoloTestCase(TestCase):
 
     def setUp(self):
         self.db_path = get_db_path()
-        Path(self.db_path).unlink(missing_ok=True)
+        if os.path.exists(self.db_path):
+            os.remove(self.db_path)
         self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
 
