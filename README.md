@@ -8,17 +8,18 @@ Try out Kolo with this demo project (Docker edition)
 
 2. Depending on your operating system run one of the following:
 
-### Linux
+    ### Linux
 
-`docker-compose --file docker-compose-linux.yml up`
+    `docker-compose --file docker-compose-linux.yml up`
 
-### macOS
+    ### macOS
 
-`docker-compose --file docker-compose-mac.yml up`
+    `docker-compose --file docker-compose-mac.yml up`
 
-### Windows
+    ### Windows
 
-`docker-compose --file docker-compose-windows.yml up`
+    `docker-compose --file docker-compose-windows.yml up`
+
 
 3. Navigate to localhost:8000/demo/ and you should see some JSON output :tada:
 
