@@ -1,9 +1,0 @@
-services:
-  test:
-    build: .
-    volumes:
-      - .:/code
-      - "~/.local/share/kolo:/root/.local/share/kolo:rw"
-    ports:
-      - "8000:8000"
-    command: python manage.py test
