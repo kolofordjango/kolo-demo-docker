@@ -5,7 +5,7 @@ certifi==2021.5.30
 chardet==4.0.0
 Django==3.2.4
 idna==2.10
-kolo==0.0.5
+kolo
 pytz==2021.1
 requests==2.25.1
 sqlparse==0.4.1

@@ -1,8 +1,0 @@
-services:
-  web:
-    build: .
-    volumes:
-      - .:/code
-      - "~/Library/Application\ Support/kolo:/root/.local/share/kolo:rw"
-    ports:
-      - "8000:8000"

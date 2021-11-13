@@ -6,20 +6,7 @@ Try out Kolo with this demo project (Docker edition)
 
 1. Clone this repository and `cd` into it
 
-2. Depending on your operating system run one of the following:
-
-    ### Linux
-
-    `docker-compose --file docker-compose-linux.yml up`
-
-    ### macOS
-
-    `docker-compose --file docker-compose-mac.yml up`
-
-    ### Windows
-
-    `docker-compose --file docker-compose-windows.yml up`
-
+2. Run `docker-compose up`
 
 3. Navigate to localhost:8000/demo/ and you should see some JSON output :tada:
 
@@ -41,8 +28,5 @@ This repo presents a minimal example of adding Kolo to your local Django set up,
 
 The relevant files are:
 - [Dockerfile](./Dockerfile)
-- docker-compose.yml
-  - [docker-compose-linux.yml](./docker-compose-linux.yml)
-  - [docker-compose-mac.yml](./docker-compose-mac.yml)
-  - [docker-compose-windows.yml](./docker-compose-windows.yml)
+- [docker-compose.yml](./docker-compose.yml)
 
